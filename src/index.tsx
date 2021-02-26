@@ -173,6 +173,7 @@ const CreditCardDisplay = (props: Props) => {
                     fontSize: props.fontSize,
                     alignSelf: 'center',
                     color: props.fontColor,
+                    marginTop: 30
                   }}
                 >
                   {hideCard} {creditcardutils.formatCardNumber(String(props.number))}
@@ -180,8 +181,21 @@ const CreditCardDisplay = (props: Props) => {
 
 
                 <View style={styles.groupContainer}>
+                  {props.name && (
+                    <View style={{ flex: 1}} >
+                      <Text
+                        style={{
+                          ...styles.groupLabel,
+                          fontSize: props.fontSize,
+                          color: props.fontColor,
+
+                        }}
+                      >{props.name}</Text>
+                    </View>
+                  )}
+
                   {props.expiration && (
-                    <>
+                    <View style={{}} >
                       <Text
                         style={{
                           ...styles.groupLabel,
@@ -201,7 +215,7 @@ const CreditCardDisplay = (props: Props) => {
                       >
                         {creditcardutils.formatCardExpiry(props.expiration)}
                       </Text>
-                    </>
+                    </View>
                   )}
                 </View>
 
@@ -243,8 +257,12 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   groupContainer: {
-    alignItems: 'center',
-    marginRight: '2%',
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-end',
+    paddingBottom: 5,
+    paddingHorizontal: 5,
   },
   groupLabel: {
     textAlignVertical: 'center',
