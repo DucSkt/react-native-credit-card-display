@@ -181,7 +181,7 @@ const CreditCardDisplay = (props: Props) => {
 
 
                 <View style={styles.groupContainer}>
-                  {props.name && (
+                  {props.name ? (
                     <View style={{ flex: 1}} >
                       <Text
                         style={{
@@ -192,7 +192,7 @@ const CreditCardDisplay = (props: Props) => {
                         }}
                       >{props.name}</Text>
                     </View>
-                  )}
+                  ) : null}
 
                   {props.expiration && (
                     <View style={{}} >
