@@ -82,6 +82,9 @@ const CreditCardDisplay = (props: Props) => {
   let cardTypeIcon = null;
   let hideCard = 'XXXX XXXX XXXX'
   switch (props.cardType) {
+    case 'paypal':
+      cardTypeIcon = require('../paypal.png');
+      break;
     case 'american express':
       hideCard= 'XXXX XXXXXX'
       cardTypeIcon = {
@@ -283,7 +286,7 @@ const styles = StyleSheet.create({
   cardTypeIcon: {
     height: 25,
     width: 25 * (125 / 80),
-    backgroundColor: 'white',
+    backgroundColor: 'transparent',
   },
   rowContainer: {
     flexDirection: 'row',
