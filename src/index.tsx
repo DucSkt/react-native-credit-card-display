@@ -83,7 +83,7 @@ const CreditCardDisplay = (props: Props) => {
   let hideCard = 'XXXX XXXX XXXX'
   switch (props.cardType) {
     case 'paypal':
-      cardTypeIcon = require('../paypal.png');
+      cardTypeIcon = require('./assets/images/paypal.png');
       break;
     case 'american express':
       hideCard= 'XXXX XXXXXX'
